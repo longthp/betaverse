@@ -1,6 +1,4 @@
 import httpx
-import asyncio
-import json
 import pandas as pd
 from bs4 import BeautifulSoup
 
@@ -41,4 +39,6 @@ def main():
 
 if __name__ == "__main__":
 	results = main()
-	print(results)
+	df = pd.DataFrame(results)
+	df.to_csv("data/lifesport.csv", index= False)
+	print(df)
